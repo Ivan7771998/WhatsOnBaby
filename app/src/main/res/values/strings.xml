@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">What\'sOnBaby</string>
+
+
+    <string name="text_btn_pager">Далее</string>
+    <string name="text_pager1">Надо идти на прогулку с ребенком и не знаешь что на него надеть?\n\n Жми "Далее" и мы расскажем и покажем, как одеть ребенка на прогулку!</string>
+    <string name="text_pager2">Чтобы точно знать погоду, разреши использовать твою геопозицию</string>
+    <string name="text_pager3_title1">Давай знакомиться!</string>
+    <string name="text_pager3_title2">Как тебя зовут?</string>
+    <string name="text_pager3_title3">Как зовут ребенка?</string>
+    <string name="text_pager3_hint1">Имя мамы</string>
+    <string name="text_pager3_hint2">Имя ребенка</string>
+    <string name="text_pager4_title1">Еще пару слов о ребенке.</string>
+    <string name="text_pager4_title2">Когда у него день рождение?</string>
+    <string name="text_pager4_title3">Какого он пола?</string>
+    <string name="text_pager4_hint1">Дата рождения</string>
+</resources>
