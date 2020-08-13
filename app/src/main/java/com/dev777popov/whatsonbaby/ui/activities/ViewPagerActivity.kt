@@ -2,6 +2,7 @@ package com.dev777popov.whatsonbaby.ui.activities
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Criteria
 import android.location.Location
@@ -9,7 +10,6 @@ import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.dev777popov.whatsonbaby.R
@@ -19,12 +19,14 @@ import com.dev777popov.whatsonbaby.ui.fragments.pagersFr.PagerFragment2
 import com.dev777popov.whatsonbaby.ui.fragments.pagersFr.PagerFragment3
 import com.dev777popov.whatsonbaby.ui.fragments.pagersFr.PagerFragment4
 import kotlinx.android.synthetic.main.activity_view_pager.*
-
+import kotlinx.android.synthetic.main.fragment_pager3.*
 
 class ViewPagerActivity : AppCompatActivity() {
 
     private val PERMISSION_REQUEST_CODE = 10
     private lateinit var pagerAdapter: PagerAdapter
+    private val EMPTY_STRING = "Пустая строка!!!"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,10 +40,29 @@ class ViewPagerActivity : AppCompatActivity() {
         //viewPager.beginFakeDrag()
 
         testBtn.setOnClickListener {
-            if (viewPager.currentItem != 3 && viewPager.currentItem != 1) {
-                viewPager.currentItem++
-            } else if (viewPager.currentItem == 1) {
-                requestPermissions()
+            when (viewPager.currentItem) {
+                0 -> viewPager.currentItem++
+                1 -> requestPermissions()
+                2 -> if (checkInputFr3()) viewPager.currentItem++
+                3 -> startActivity(Intent(this, MainActivity::class.java))
+            }
+        }
+    }
+
+    private fun checkInputFr3(): Boolean {
+        return when {
+            textNameMomText.text.toString() == "" -> {
+                textNameMom.error = EMPTY_STRING
+                textNameChild.error = null
+                false
+            }
+            textNameChildText.text.toString() == "" -> {
+                textNameChild.error = EMPTY_STRING
+                textNameMom.error = null
+                false
+            }
+            else -> {
+                true
             }
         }
     }
@@ -63,15 +84,15 @@ class ViewPagerActivity : AppCompatActivity() {
     }
 
     private fun requestLocationPermissions() {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(
-                    arrayOf(
-                        Manifest.permission.ACCESS_COARSE_LOCATION,
-                        Manifest.permission.ACCESS_FINE_LOCATION
-                    ),
-                    PERMISSION_REQUEST_CODE
-                )
-            }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(
+                arrayOf(
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ),
+                PERMISSION_REQUEST_CODE
+            )
+        }
     }
 
     override fun onRequestPermissionsResult(

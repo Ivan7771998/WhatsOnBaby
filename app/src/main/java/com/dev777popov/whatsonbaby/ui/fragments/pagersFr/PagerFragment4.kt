@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.dev777popov.whatsonbaby.R
+import kotlinx.android.synthetic.main.activity_view_pager.*
 import kotlinx.android.synthetic.main.fragment_pager4.*
 import java.lang.StringBuilder
 import java.text.SimpleDateFormat

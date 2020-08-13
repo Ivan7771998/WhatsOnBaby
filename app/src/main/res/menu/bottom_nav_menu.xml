@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_weather"
+        android:icon="@drawable/ic_weather"
+        android:title="@string/title_weather" />
+
+    <item
+        android:id="@+id/navigation_wardrobe"
+        android:icon="@drawable/ic_wardrobe"
+        android:title="@string/title_wardrobe" />
+
+    <item
+        android:id="@+id/navigation_lifehack"
+        android:icon="@drawable/ic_lifehack"
+        android:title="@string/title_lifehack" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/title_settings" />
+</menu>

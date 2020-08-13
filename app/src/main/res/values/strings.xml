@@ -14,4 +14,9 @@
     <string name="text_pager4_title2">Когда у него день рождение?</string>
     <string name="text_pager4_title3">Какого он пола?</string>
     <string name="text_pager4_hint1">Дата рождения</string>
+
+    <string name="title_weather">Weather</string>
+    <string name="title_wardrobe">Wardrobe</string>
+    <string name="title_lifehack">Lifehack</string>
+    <string name="title_settings">Settings</string>
 </resources>
